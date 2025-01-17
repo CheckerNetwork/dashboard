@@ -39,6 +39,6 @@ jobs:
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        projectName: dashboard  # Replace with your Cloudflare Pages project name
+        projectName: checker-dashboard  # Replace with your Cloudflare Pages project name
         directory: ./dist  # Replace with your output directory after build
 
