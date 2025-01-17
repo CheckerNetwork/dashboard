@@ -7,26 +7,39 @@ import { LineGraph } from "./components/line-graph.js";
 import { todayInFormat, getDateXDaysAgo } from "./utils/date-utils.js";
 const CheckerParticipantsCumulative = FileAttachment("./data/checker-participants-cumulative.json").json();
 const CheckerParticipantsMonthlyActive = FileAttachment("./data/checker-participants-monthly-active.json").json();
+const CheckerParticipantsDailyActive = FileAttachment("./data/checker-participants-daily-active.json").json();
+const CheckerChecksDaily = FileAttachment("./data/checker-checks-daily.json").json();
 ```
 
 <div class="hero">
-  <body><img src="media/Network-Horizontal-Dark-Background.png" alt="Checker Logo" width="300" /><body>
+  <body><img src="media/checker-logomark-blue.png" alt="Checker Logo" width="300" /><body>
     <h2>Dashboard</h2>
     <body><a href="https://dashboard.filstation.app" target="_blank" rel="noopener noreferrer">(Click here for Legacy Filecoin Station Grafana Dashboard)</a><body>
 </div>
 
-<h4>Checker Network Accounts</h4>
+<h4>Accounts</h4>
 
 <div class="grid grid-cols-2" style="grid-auto-rows: 500px;">
   <div class="card">${
-    resize((width) => LineGraph(CheckerParticipantsCumulative, {width, title: "Checker Network Account Created (unique FIL accounts)", xKey: "day", yKey:"participants" }))
+    resize((width) => LineGraph(CheckerParticipantsCumulative, {width, title: "Checker Network Account Created (unique FIL accounts)", xKey: "day", yKey: "participants", label: "Accounts" }))
   }</div>
   <div class="card">${
-    resize((width) => LineGraph(CheckerParticipantsMonthlyActive, {width, title: "Monthly Active Checker Network Accounts (unique FIL addresses)", xKey: "month", yKey: "participants" }))
+    resize((width) => LineGraph(CheckerParticipantsMonthlyActive, {width, title: "Monthly Active Checker Network Accounts (unique FIL addresses)", xKey: "month", yKey: "participants", label: "Accounts" }))
   }</div>
 </div>
 
 <div class="grid grid-cols-2" style="grid-auto-rows: 504px;">
+  <div class="card">${
+    resize((width) => LineGraph(CheckerParticipantsDailyActive, {width, title: "Daily Active Checker Network Accounts (unique FIL addresses)", xKey: "day", yKey: "participants", label: "Accounts" }))
+  }</div>
+</div>
+
+<h4>Checks</h4>
+
+<div class="grid grid-cols-2" style="grid-auto-rows: 504px;">
+  <div class="card">${
+    resize((width) => LineGraph(CheckerChecksDaily, {width, title: "Number of Verified Checks Across Network Each Day", xKey: "day", yKey: "accepted_measurement_count", label: "Checks" }))
+  }</div>
 </div>
 
 <style>
