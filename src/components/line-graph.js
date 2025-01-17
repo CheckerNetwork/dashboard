@@ -1,6 +1,6 @@
 import * as Plot from "npm:@observablehq/plot";
 
-export function LineGraph(events, {width, height, title, xKey, yKey, label } = {}) {
+export function LineGraph(events, {width, height, title, xKey, yKey, label, millions } = {}) {
     // const startDate = new Date(start);
     // const endDate = new Date(end);
     // const filteredEvents = events.filter((event) => {
@@ -16,7 +16,7 @@ export function LineGraph(events, {width, height, title, xKey, yKey, label } = {
         marks: [
             Plot.lineY(events, {
                 x: xKey,
-                y: yKey,
+                y: millions ? d => d[yKey] / 1e6 : yKey,
                 // z: null, // varying color, not series
                 stroke: "#4FF8C9",
                 // curve: ""

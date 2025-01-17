@@ -13,7 +13,7 @@ const CheckerChecksDaily = FileAttachment("./data/checker-checks-daily.json").js
 
 <div class="hero">
   <body><img src="media/checker-logomark-blue.png" alt="Checker Logo" width="300" /><body>
-    <h2>Dashboard</h2>
+    <h2>Dashboard Beta</h2>
     <body><a href="https://dashboard.filstation.app" target="_blank" rel="noopener noreferrer">(Click here for Legacy Filecoin Station Grafana Dashboard)</a><body>
 </div>
 
@@ -34,15 +34,33 @@ const CheckerChecksDaily = FileAttachment("./data/checker-checks-daily.json").js
   }</div>
 </div>
 
+<h4>Rewards</h4>
+
+<div class="grid grid-cols-2">
+  <div class="card">
+  <div class="">Total Network Rewards (Monthly)</div>
+  <div class="card-figure">1,000 FIL</div>
+  </div>
+</div>
+
 <h4>Checks</h4>
 
 <div class="grid grid-cols-2" style="grid-auto-rows: 504px;">
   <div class="card">${
-    resize((width) => LineGraph(CheckerChecksDaily, {width, title: "Number of Verified Checks Across Network Each Day", xKey: "day", yKey: "accepted_measurement_count", label: "Checks" }))
+    resize((width) => LineGraph(CheckerChecksDaily, {width, title: "Number of Verified Checks Across Network Each Day", xKey: "day", yKey: "accepted_measurement_count", label: "Checks (Millions)", millions: true }))
   }</div>
 </div>
 
 <style>
+
+.card-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 4vw;
+  color: #E30ADA;
+}
 
 .hero {
   display: flex;
