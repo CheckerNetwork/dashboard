@@ -12,7 +12,7 @@ const CheckerChecksDaily = FileAttachment("./data/checker-checks-daily.json").js
 ```
 
 <div class="hero">
-  <body><img src="media/checker-logomark-blue.png" alt="Checker Logo" width="300" /><body>
+  <body><a href="https://checker.network" target="_blank" rel="noopener noreferrer"><img src="media/checker-logomark-blue.png" alt="Checker Logo" width="300" /></a><body>
     <h2>Dashboard Beta</h2>
     <body><a href="https://dashboard.filstation.app" target="_blank" rel="noopener noreferrer">(Click here for Legacy Filecoin Station Grafana Dashboard)</a><body>
 </div>
