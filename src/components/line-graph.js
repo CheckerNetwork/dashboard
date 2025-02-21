@@ -11,7 +11,7 @@ export function LineGraph(events, {width, height, title, xKey, yKey, label, mill
         title,
         width,
         height,
-        x: {type: "utc", ticks: "month", label: null},
+        x: {type: "utc", label: null},
         y: {grid: true, inset: 10, label },
         marks: [
             Plot.lineY(events, {
