@@ -9,6 +9,7 @@ const CheckerParticipantsCumulative = FileAttachment("./data/checker-participant
 const CheckerParticipantsMonthlyActive = FileAttachment("./data/checker-participants-monthly-active.json").json();
 const CheckerParticipantsDailyActive = FileAttachment("./data/checker-participants-daily-active.json").json();
 const CheckerChecksDaily = FileAttachment("./data/checker-checks-daily.json").json();
+const CheckerDesktopUsersDaily = FileAttachment("./data/checker-desktop-users-daily.json").json();
 ```
 
 <div class="hero">
@@ -31,6 +32,9 @@ const CheckerChecksDaily = FileAttachment("./data/checker-checks-daily.json").js
 <div class="grid grid-cols-2" style="grid-auto-rows: 504px;">
   <div class="card">${
     resize((width) => LineGraph(CheckerParticipantsDailyActive, {width, title: "Daily Active Checker Network Accounts (unique FIL addresses)", xKey: "day", yKey: "participants", label: "Accounts" }))
+  }</div>
+  <div class="card">${
+    resize((width) => LineGraph(CheckerDesktopUsersDaily, {width, title: "Daily Active Checker Desktop Users", xKey: "day", yKey: "user_count", label: "Desktop Users" }))
   }</div>
 </div>
 
